@@ -19,7 +19,7 @@ const Header = () => {
             <li className="header__item"><a href="#" className="header__link">Proyectos</a></li>
             <li className="header__item"><a href="#" className="header__link">Nosotros</a></li>
             <li className="header__item"><a href="#" className="header__link">Blog</a></li>
-            <li className="header__item"><a href="#" className="header__link">Contáctanos</a></li>
+            <li className="header__item"><a href="#" className="header__link">Contacto</a></li>
           </ul>
         </nav>
       </div>
