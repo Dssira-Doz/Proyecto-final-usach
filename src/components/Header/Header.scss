@@ -1,87 +1,65 @@
-// Variables (deben coincidir con las del Footer para consistencia)
-$color-primary: #3498db;
-$color-dark: #2c3e50;
-$color-light: #ecf0f1;
-$breakpoint-mobile: 768px;
+@use '../../styles/variables' as *;
+@use '../../styles/grid' as *;
+@use '../../styles/mixins' as *;
 
-.header {
-  background: $color-dark;
-  color: $color-light;
-  padding: 1rem 60px;
-  position: relative;
+header.header.container-full {
+  background-color: color(primary) !important;
+  color: color(text-light);
+  padding: 1rem 0;
+  position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
 
-  &__content {
-    display: flex;
-    justify-content: space-between;
+  .header__content {
+    @extend .grid-12;
     align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
   }
 
-  &__column {
-    &--logo {
-      flex: 2;
-    }
-
-    &--nav {
-      flex: 3;
-    }
-  }
-
-  &__logo-image {
+  .header__logo-image {
     width: 120px;
     transition: transform 0.3s ease;
-
+    
     &:hover {
       transform: scale(1.05);
     }
   }
 
-  &__list {
+  .header__list {
+    list-style: none;
     display: flex;
     justify-content: flex-end;
-    list-style: none;
-    padding: 0;
-    margin: 0;
     gap: 2rem;
+    margin: 0;
+    padding: 0;
   }
 
-  &__link {
-    color: $color-light;
-    text-decoration: none;
+  .header__link {
+    color: color(text-light);
     font-weight: 500;
     position: relative;
-    transition: color 0.3s ease;
-
-    &:hover {
-      color: $color-primary;
-
-      &::after {
-        width: 100%;
-      }
-    }
-
+    
     &::after {
       content: '';
       position: absolute;
       width: 0;
       height: 2px;
-      background: $color-primary;
+      background: color(secondary);
       bottom: -5px;
       left: 0;
-      transition: width 0.3s ease;
+      transition: width 0.3s;
+    }
+    
+    &:hover {
+      color: color(secondary);
+      
+      &::after {
+        width: 100%;
+      }
     }
   }
 
-  @media (max-width: $breakpoint-mobile) {
-    &__content {
-      flex-direction: column;
-      gap: 1rem;
-    }
-
-    &__list {
+  @media (max-width: breakpoint(mobile)) {
+    .header__list {
       justify-content: center;
       flex-wrap: wrap;
       gap: 1rem;

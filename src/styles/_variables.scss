@@ -1,0 +1,35 @@
+@use 'sass:map';
+@use 'sass:color';
+
+$colors: (
+  primary: #000000,
+  secondary: #FF5F15,
+  accent: #E63946,
+  text-dark: #212121,
+  text-light: #FFFFFF,
+  background: #FAFAFA,
+  card-bg: #FFFFFF,
+  divider: rgba(0, 0, 0, 0.1)
+);
+
+$grid-columns: 12;
+$grid-margin: 60px;
+$grid-margin-mobile: 20px;
+$grid-gutter: 24px;
+$max-width: 1440px;
+
+$breakpoints: (
+  mobile: 768px,
+  tablet: 1024px
+);
+
+$font-family: 'Arial', sans-serif;
+$line-height: 1.6;
+
+@function color($key) {
+  @return map.get($colors, $key);
+}
+
+@function breakpoint($key) {
+  @return map.get($breakpoints, $key);
+}
