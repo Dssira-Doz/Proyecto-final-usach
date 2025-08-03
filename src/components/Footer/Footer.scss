@@ -1,0 +1,76 @@
+// Variables (pueden estar en _variables.scss)
+$color-primary: #3498db;
+$color-dark: #2c3e50;
+$color-light: #ecf0f1;
+$breakpoint-mobile: 768px;
+
+.footer {
+  background: $color-dark;
+  color: $color-light;
+  padding: 2rem 1rem;
+  font-family: Arial, sans-serif;
+
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid rgba($color-light, 0.1);
+
+    @media (max-width: $breakpoint-mobile) {
+      flex-direction: column;
+    }
+  }
+
+  &__column {
+    flex: 1;
+    min-width: 200px;
+
+    &--logo {
+      flex: 2; // Ocupa 2/4 del espacio
+    }
+
+    &--nav, &--contact {
+      flex: 1; // Ocupa 1/4 cada una
+    }
+  }
+
+  &__logo {
+    max-width: 150px;
+    height: auto;
+    margin-bottom: 1rem;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+  }
+
+  &__item {
+    margin-bottom: 0.5rem;
+  }
+
+  &__link, &__text {
+    color: $color-light;
+    text-decoration: none;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: 1rem;
+  }
+
+  &__copyright {
+    text-align: center;
+    padding-top: 1.5rem;
+    font-size: 0.9rem;
+    opacity: 0.7;
+  }
+}
