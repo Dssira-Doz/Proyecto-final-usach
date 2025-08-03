@@ -1,10 +1,10 @@
 @use "sass:color";
 
-$color-primario: #2c3e50;
+$color-primario: #444;
 $breakpoint-mobile: 768px;
 
 .pilares {
-  padding: 4rem 2rem;
+  padding: 60px;
   text-align: center;
   background: #f9f9f9;
 
@@ -23,7 +23,7 @@ $breakpoint-mobile: 768px;
 
   &__grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto;
@@ -36,8 +36,8 @@ $breakpoint-mobile: 768px;
 
 .pilar {
   background: white;
-  padding: 2rem;
-  border-radius: 8px;
+  padding: 0.5rem;
+  border-radius:  24px 24px 0px 0px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 
@@ -46,8 +46,8 @@ $breakpoint-mobile: 768px;
   }
 
   &__imagen {
-    width: 200px;
-    height: 200px;
+    width: 500px;
+    height: 500px;
     margin-bottom: 1.5rem;
     object-fit: contain;
   }
