@@ -1,7 +1,6 @@
 @use 'variables' as *;
 @use 'base';
 @use 'grid';
-@use 'mixins';
 
 body {
   background-color: color(background) !important;
