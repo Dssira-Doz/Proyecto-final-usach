@@ -4,11 +4,16 @@
   position: relative;
   background: url('/hero.jpg') center/cover no-repeat;
   color: color(text-light); 
-  padding: 2rem 4rem;
+  padding: 4rem $grid-margin;
   display: flex;
   align-items: center;
   min-height: 80vh;
   border-radius: 0px 0px 50px 50px;
+
+  @media (max-width: breakpoint(mobile)) {
+    padding: 2rem $grid-margin-mobile;
+    border-radius: 0px;
+  }
 
   &__overlay {
     background: rgba(0, 0, 0, 0.5);
@@ -21,6 +26,11 @@
     border-radius: 0px 0px 50px 50px;
     justify-content: center;
     padding: $grid-margin;
+
+    @media (max-width: breakpoint(mobile)) {
+      border-radius: 0;
+      padding: 1.5rem;
+    }
   }
 
   &__content {
@@ -29,7 +39,7 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     gap: 1rem;
-    padding-top: 4rem;
+    //padding-top: 4rem;
   }
 
   H1,
@@ -37,11 +47,25 @@
     grid-column: span 7;
     color: color(text-light);
     margin: 0 0 1rem 0;
+
+    @media (max-width: breakpoint(mobile)) {
+      grid-column: span 12;
+      text-align: center;
+      margin: $grid-margin-mobile
+    }
   }
 
   &__title {
     font-size: 3rem;
     font-weight: bold;
+
+    @media (max-width: breakpoint(tablet)) {
+      font-size: 2rem;
+    }
+
+    @media (max-width: breakpoint(mobile)) {
+      font-size: 1.5rem;
+    }
   }
 
   &__subtitle {
@@ -50,6 +74,13 @@
 
     strong {
       font-weight: bold;
+    }
+
+    @media (max-width: breakpoint(mobile)){
+      text-align: center;
+      font-size: 1rem;
+      line-height: 1.4;
+      
     }
   }
 
@@ -70,6 +101,12 @@
     &:hover {
       background-color: color(text-light);
       color: color(accent)
+    }
+
+    @media (max-width: breakpoint(mobile)) {
+      grid-column: span 12;
+      text-align: center;
+      justify-self: center;
     }
   }
 }

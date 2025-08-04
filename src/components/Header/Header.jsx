@@ -12,12 +12,12 @@ const Header = () => {
           </div>
           <nav className="header__nav col-9 col-t-6 col-m-12">
             <ul className="header__list">
-              <li className="header__item"><a href="#" className="header__link">Home</a></li>
-              <li className="header__item"><a href="#" className="header__link">Servicios</a></li>
-              <li className="header__item"><a href="#" className="header__link">Proyectos</a></li>
-              <li className="header__item"><a href="#" className="header__link">Nosotros</a></li>
-              <li className="header__item"><a href="#" className="header__link">Blog</a></li>
-              <li className="header__item"><a href="#" className="header__link">Contacto</a></li>
+              <li className="header__item"><a href="#Home" className="header__link">Home</a></li>
+              <li className="header__item"><a href="#Servicios" className="header__link">Servicios</a></li>
+              <li className="header__item"><a href="#Proyectos" className="header__link">Proyectos</a></li>
+              <li className="header__item"><a href="#Nosotros" className="header__link">Nosotros</a></li>
+              <li className="header__item"><a href="#Blog" className="header__link">Blog</a></li>
+              <li className="header__item"><a href="#Contacto" className="header__link">Contacto</a></li>
             </ul>
           </nav>
         </div>
