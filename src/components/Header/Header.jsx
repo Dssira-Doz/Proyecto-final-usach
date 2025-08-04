@@ -1,6 +1,6 @@
 import React from 'react';
 import './Header.scss';
-import logo from '../../assets/AgritaLogo.png';
+import logo from '../../assets/AgritaLogo500.png';
 
 const Header = () => {
   return (
