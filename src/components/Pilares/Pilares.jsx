@@ -30,7 +30,8 @@ const Pilares = () => {
   ];
 
   return (
-    <section className="pilares">
+    <section className="pilares" id='Servicios'>
+      <br />
       <h2 className="pilares__titulo">Nuestros Servicios</h2>
       <p className="pilares__intro">Diseñamos y desarrollamos productos digitales centrados en las personas. Acompañamos a empresas, organizaciones y equipos desde la definición estratégica hasta la implementación final.</p>
       
