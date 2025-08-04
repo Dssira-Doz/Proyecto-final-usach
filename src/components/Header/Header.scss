@@ -10,7 +10,8 @@ header.header.container-full {
   z-index: 1000;
 
   .header__content {
-    @extend .grid-12;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
   }
 
@@ -21,6 +22,45 @@ header.header.container-full {
     &:hover {
       transform: scale(1.05);
     }
+  }
+
+  //
+  .header__toggle{
+    display: none; // Oculta el botón de menú en pantallas grandes
+    flex-direction: column; // Cambia la dirección a columna
+    justify-content: space-between; // Ordena los elementos con un espacio entre ellos
+    width: 30px;
+    height: 22px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100; // Asegura que el botón esté por encima de otros elementos
+    
+    .header__bar{
+    width: 100%;
+    margin: 2px 0;
+    height: 4px;
+    background-color: color(text-light);
+    border-radius: 2px;
+    transition: all 0.3s ease; // Transición suave para el cambio de color
+    }
+
+    &.open .header__bar:nth-child(1) {
+      transform: rotate(45deg) translate(5px, 5px); // Rotación de la primera barra
+    }
+
+    &.open .header__bar:nth-child(2) {
+      opacity: 0; // Oculta la segunda barra
+    }
+
+    &.open .header__bar:nth-child(3) {
+      transform: rotate(-45deg) translate(5px, -5px); // Rotación de la tercera barra
+    }
+  }
+//
+
+.header__nav{
+    transition: max-height 0.3s ease; // Transición suave para el menú
   }
 
   .header__list {
@@ -58,10 +98,33 @@ header.header.container-full {
   }
 
   @media (max-width: breakpoint(mobile)) {
+    .header__toggle {
+      display: flex; // Muestra el botón de menú en pantallas pequeñas
+    }
+    .header__nav {
+      max-height: 0; // Oculta el menú por defecto
+      overflow: hidden; // Evita que el contenido se desborde
+      background-color: color(primary);
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      transition: max-height 0.3s ease;
+    }
+
+    .header__nav.open {
+      max-height: 400px; // Fija una altura máxima para el menú desplegado
+    }
+
     .header__list {
-      justify-content: center;
-      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 0;
       gap: 1rem;
     }
   }
+}
+
+#Servicios {
+  scroll-margin-top: 80px; // Ajusta el scroll para que el header no tape el contenido
 }
