@@ -9,6 +9,17 @@
   @media (max-width: breakpoint(mobile)) {
     padding: 2rem 20px;
   }
+
+  &__titulo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: color(primary);
+
+    @media (max-width: #{breakpoint(mobile)}) {
+      font-size: 1.8rem;
+    }
+  }
+
   &__intro {
     max-width: 800px;
     margin: 0 auto 4rem; // Aumenté de 3rem a 4rem (o el valor que prefieras)
