@@ -51,9 +51,9 @@ function BlogPreview() {
             onClick={() => handleCardClick(post.id)}
             >
               <img 
-                src={post.image.startsWith('/') ? post.image : `/${post.image}`}
+                src={`${process.env.PUBLIC_URL}${post.image.startsWith('/') ? post.image : `/${post.image}`}`}
                 alt={post.title}
-                onError={(e) => e.target.src = '/images/default-image.jpg'}
+                onError={(e) => e.target.src = `${process.env.PUBLIC_URL}/images/default-image.jpg`}
               />
               <h3>{post.title}</h3>
               <p>{post.content}</p>
