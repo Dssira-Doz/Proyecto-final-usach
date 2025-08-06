@@ -3,8 +3,12 @@
 
   .blog-preview{
     max-width: 1200px;
-    //margin: 0 auto;
-    margin: $grid-margin;
+    width: 100%;
+    margin: $grid-margin auto;
+    padding: $grid-margin;
+
+
+
 
     .loading {
       text-align: center;
