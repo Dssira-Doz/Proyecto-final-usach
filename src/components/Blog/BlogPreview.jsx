@@ -9,7 +9,7 @@ function BlogPreview() {
   const fetchPosts = async () => {
       try{
         setLoading(true); 
-        const response = await fetch("/blogData.json"); 
+        const response = await fetch(`${process.env.PUBLIC_URL}/blogData.json`);
 
         if (!response.ok) {
           throw new Error(`Error HTTP: ${response.status}`);
@@ -37,7 +37,7 @@ function BlogPreview() {
     //Manejo de estados
     if (loading) return <p className="loading">Cargando contenido...</p>;
     if (error) return <p className="error">{error}</p>;
-    if (posts.lenght === 0) return <p>No hay contenido disponible.</p>;
+    if (posts.length === 0) return <p>No hay contenido disponible.</p>;
 
     //Renderiza el contenido obtenido de la API
     return (
