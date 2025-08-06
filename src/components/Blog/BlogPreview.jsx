@@ -6,9 +6,7 @@ function BlogPreview() {
   const [loading, setLoading] = useState(true); 
   const [error, setError] = useState(null); 
 
-  //Consumo de API propia con async-await y try-catch
-  useEffect(() => {
-    const fetchPosts = async () => {
+  const fetchPosts = async () => {
       try{
         setLoading(true); 
         const response = await fetch("/blogData.json"); 
@@ -26,7 +24,13 @@ function BlogPreview() {
       } finally {
         setLoading(false);
       }
-      };
+    };
+
+    const handleCardClick = (postId) => {
+      console.log(`Post seleccionado: ${postId}`);
+    };
+    
+    useEffect(() => {
       fetchPosts();
     }, []);
 
@@ -41,7 +45,11 @@ function BlogPreview() {
         <h2 className="blog-preview__title">Blog</h2>
         <div className="blog-preview__cards">
           {posts.map((post) => (
-            <article key={post.id} className="blog-card">
+            <article 
+            key={post.id} 
+            className="blog-card"
+            onClick={() => handleCardClick(post.id)}
+            >
               <img 
                 src={post.image.startsWith('/') ? post.image : `/${post.image}`}
                 alt={post.title}
