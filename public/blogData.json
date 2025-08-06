@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "title": "5 principios clave del diseño UX",
+        "category": "UX/UI",
+        "content": "Descubre cómo la usabilidad, accesibilidad y jerarquía visual influyen directamente en la experiencia del usuario.",
+        "image": "/images/ux-principios.jpg" 
+    },
+    {
+        "id": 2,
+        "title": "Qué es el Diseño de Productos Digitales",
+        "category": "Producto Digital",
+        "content": "Una mirada integral a cómo los equipos UX, UI y de desarrollo trabajan juntos para dar vida a soluciones digitales efectivas.",
+        "image": "images/producto-digital.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Tendencias en Desarrollo Frontend 2025",
+        "category": "Frontend",
+        "content": "Explora las herramientas, frameworks y buenas prácticas que marcan la pauta en el desarrollo moderno.",
+        "image": "images/frontend-2025.jpg"
+    },
+    {
+        "id": 4,
+        "title": "Cómo la IA está Transformando el Diseño UX",
+        "category": "UX/UI",
+        "content": "Un análisis de cómo las herramientas de inteligencia artificial están revolucionando la forma en que diseñamos experiencias digitales.",
+        "image": "images/uxui.jpg"
+    },
+    {
+        "id": 5,
+        "title": "La Importancia del Testing en el Desarrollo Web",
+        "category": "Desarrollo Web",
+        "content": "Por qué las pruebas son esenciales para garantizar la calidad y funcionalidad de tus aplicaciones web.",
+        "image": "images/testing.jpg"
+    },
+    {
+        "id": 6,
+        "title": "Cómo estructurar una consultoría efectiva",
+        "category": "Consultoría",
+        "content": "Desde el levantamiento de requerimientos hasta la entrega de soluciones: claves para una consultoría exitosa en diseño.",
+        "image": "images/consultoria.jpg"
+    }
+]
