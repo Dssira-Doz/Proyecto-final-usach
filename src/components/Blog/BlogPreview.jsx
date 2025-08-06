@@ -1,47 +1,60 @@
-import React, { useEffect, useState } from "react";
-import "./BlogPreview.scss";
-
-const images = {
-  1: "/images/ux-principios.jpg",
-  2: "/images/producto-digital.jpg",
-  3: "/images/frontend-2025.jpg",
-  4: "/images/uxui.jpg",
-  5: "/images/testing.jpg",
-  6: "/images/consultoria-efectiva.jpg",
-};
+import React, {useEffect, useState} from "react";
+import './BlogPreview.scss';
 
 function BlogPreview() {
   const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true); 
+  const [error, setError] = useState(null); 
 
+  //Consumo de API propia con async-await y try-catch
   useEffect(() => {
-    // Asumiendo que tu JSON está en public/posts.json
-    fetch("/blogData.json")
-      .then((res) => res.json())
-      .then((data) => {
-        setPosts(data.slice(0, 3)); // Guardamos solo las primeras 3 entradas
-      })
-      .catch((error) => {
-        console.error("Error al cargar posts:", error);
-      });
-  }, []);
+    const fetchPosts = async () => {
+      try{
+        setLoading(true); 
+        const response = await fetch("/blogData.json"); 
 
-  if (posts.length === 0) return <p>Cargando posts...</p>;
+        if (!response.ok) {
+          throw new Error(`Error HTTP: ${response.status}`);
+        }
+        
+        const data = await response.json();
+        await new Promise(resolve => setTimeout(resolve, 2000));
+        setPosts(data.slice(0, 3));
+      } catch (err) {
+        setError("No se pudo cargar el contenido. Intentar de nuevo.");
+        console.error("Fetch error:", err);
+      } finally {
+        setLoading(false);
+      }
+      };
+      fetchPosts();
+    }, []);
 
-  return (
-    <section className="blog-preview" id="Blog">
-      <br />
+    //Manejo de estados
+    if (loading) return <p className="loading">Cargando contenido...</p>;
+    if (error) return <p className="error">{error}</p>;
+    if (posts.lenght === 0) return <p>No hay contenido disponible.</p>;
+
+    //Renderiza el contenido obtenido de la API
+    return (
+      <section className="blog-preview" id="Blog">
         <h2 className="blog-preview__title">Blog</h2>
         <div className="blog-preview__cards">
           {posts.map((post) => (
-            <div key={post.id} className="blog-card">
-              <img src={images[post.id]} alt={post.title} />
+            <article key={post.id} className="blog-card">
+              <img 
+                src={post.image.startsWith('/') ? post.image : `/${post.image}`}
+                alt={post.title}
+                onError={(e) => e.target.src = '/images/default-image.jpg'}
+              />
               <h3>{post.title}</h3>
               <p>{post.content}</p>
-            </div>
-          ))}
+              <span className="category">{post.category}</span>
+            </article>
+        ))}
         </div>
-    </section>
-  );
-}
+      </section>
+    );
+  }
 
-export default BlogPreview;
+  export default BlogPreview;

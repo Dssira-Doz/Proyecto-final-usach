@@ -1,43 +1,56 @@
 @use '../../styles/variables' as *;
-@use '../../styles/grid' as *;  
-  
-  .blog-preview {
-    padding: 2rem 1rem;
+@use '../../styles/grid' as *;
+
+  .blog-preview{
     max-width: 1200px;
-    margin: 0 auto;
+    //margin: 0 auto;
+    margin: $grid-margin;
 
-    &__title {
-      font-weight: 700;
-      font-size: 2.5rem;
-      color: color(primary);
-      margin-bottom: 2rem;
-      width: 100%;
+    .loading {
       text-align: center;
-
-      @media (max-width: #{breakpoint(mobile)}) {
-      font-size: 1.8rem;
-      }
+      padding: 2rem;
+      color: color(text-light);
     }
 
-    &__cards {
+    .error {
+      text-align: center;
+      padding: 1.5rem;
+      background: rgba(color(error), 0.1);
+      color: color(error);
+      border-radius: 8px;
+      margin: 1rem auto;
+      max-width: 500px;
+    }
+
+      &__title{
+        font-weight: 700;
+        font-size: 2.5rem;
+        color: color(primary);
+        margin-bottom: 4rem;
+        width: 100%;
+        text-align: center;
+
+        @media (max-width: #{breakpoint(mobile)}) {
+          font-size: 1.8rem;
+        }
+      }
+
+      &__cards {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
 
       @media (max-width: #{breakpoint(tablet)}) {
-        /* tablet mantiene 3 columnas */
         grid-template-columns: repeat(3, 1fr);
       }
-
       @media (max-width: #{breakpoint(mobile)}) {
-        /* móvil 1 columna */
         grid-template-columns: 1fr;
       }
-      
     }
   }
 
   .blog-card {
+    position: relative;
     background-color: color(card-bg);
     border-radius: 8px;
     box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
@@ -51,24 +64,36 @@
       box-shadow: 0 8px 16px rgb(0 0 0 / 0.15);
     }
 
+    .category {
+      position: absolute;
+      top: 10;
+      right: 10px;
+      background: color(primary);
+      color: color(text-light);
+      padding: 0.3rem 0.6rem;
+      border-radius: 0px 0px 8px 8px;
+      font: 0.9rem;
+    }
     img {
       width: 100%;
       height: 180px;
       object-fit: cover;
     }
-
     h3 {
       margin: 1rem;
-      color: color(text-dark);
+      color: color(primary);
     }
-
     p {
-      margin: 0 1rem 1rem;
+      margin: 1rem;
       color: color(text-dark);
       line-height: 1.4;
     }
   }
 
-  #Blog{
-    scroll-margin-top: 80px; /* Ajusta según tu header */
+  #Blog {
+    scroll-margin-top: 100px; //// Ajusta el scroll para que el header no tape el contenido
   }
+
+
+  
+    

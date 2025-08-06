@@ -2,18 +2,19 @@
 @use '../../styles/grid' as *;
 
 .pilares {
-  padding: 60px; // Padding lateral de 60px
+  margin: $grid-margin;
   text-align: center;
   background: color(background);
 
-  @media (max-width: breakpoint(mobile)) {
-    padding: 2rem 20px;
+  @media (max-width: #{breakpoint(mobile)}) {
+    padding: 1rem 0rem;
   }
 
   &__titulo {
     font-size: 2.5rem;
     font-weight: 700;
     color: color(primary);
+
 
     @media (max-width: #{breakpoint(mobile)}) {
       font-size: 1.8rem;
@@ -26,6 +27,7 @@
     color: color(text-dark);
     font-size: 1.1rem;
     line-height: 1.6;
+    margin-bottom: 4rem;
   }
   &__grid {
     display: grid;
@@ -66,4 +68,8 @@
     padding: 1.5rem;
     text-align: left;
   }
+}
+
+#Servicios {
+  scroll-margin-top: 100px; // Ajusta el scroll para que el header no tape el contenido
 }

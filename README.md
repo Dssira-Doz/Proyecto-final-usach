@@ -1,12 +1,45 @@
-# React + Vite
+# Proyecto Final USACH
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una aplicación web desarrollada con React y Vite, que simula un blog y portafolio de servicios digitales. Incluye vistas para blog, contacto, servicios, proyectos, y más.
 
-Currently, two official plugins are available:
+## Estructura del Proyecto
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- `public/`: Archivos estáticos, imágenes y datos del blog (`blogData.json`).
+- `src/`: Código fuente principal.
+  - `components/`: Componentes reutilizables (Header, Footer, BlogPreview, etc).
+  - `views/`: Vistas principales de la aplicación (Home, Blog, Contacto, etc).
+  - `styles/`: Archivos SCSS globales y utilitarios.
+  - `assets/`: Imágenes y recursos gráficos.
+- `index.html`: Archivo HTML principal.
+- `vite.config.js`: Configuración de Vite.
+- `package.json`: Dependencias y scripts del proyecto.
 
-## Expanding the ESLint configuration
+## Instalación y Ejecución
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Clona el repositorio:
+   ```bash
+   git clone <url-del-repositorio>
+   cd Proyecto-final-usach
+   ```
+2. Instala las dependencias:
+   ```bash
+   npm install
+   ```
+3. Inicia el servidor de desarrollo:
+   ```bash
+   npm run dev
+   ```
+4. Abre la aplicación en tu navegador en `http://localhost:5173` (o el puerto que indique la terminal).
+
+## Scripts Disponibles
+- `npm run dev`: Inicia el servidor de desarrollo.
+- `npm run build`: Genera la versión de producción.
+- `npm run preview`: Previsualiza la versión de producción.
+
+## Notas
+- Los datos del blog se encuentran en `public/blogData.json`.
+- Las imágenes deben estar en la carpeta `public/images` o `src/assets` según su uso.
+- El proyecto utiliza SCSS para los estilos.
+
+## Autoría
+Proyecto realizado como entrega final para la Universidad de Santiago de Chile.

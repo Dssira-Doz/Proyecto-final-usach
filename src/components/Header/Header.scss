@@ -26,15 +26,15 @@ header.header.container-full {
 
   //
   .header__toggle{
-    display: none; // Oculta el botón de menú en pantallas grandes
-    flex-direction: column; // Cambia la dirección a columna
-    justify-content: space-between; // Ordena los elementos con un espacio entre ellos
+    display: none; 
+    flex-direction: column;
+    justify-content: space-between; 
     width: 30px;
     height: 22px;
     background: none;
     border: none;
     cursor: pointer;
-    z-index: 1100; // Asegura que el botón esté por encima de otros elementos
+    z-index: 1100;
     
     .header__bar{
     width: 100%;
@@ -42,25 +42,25 @@ header.header.container-full {
     height: 4px;
     background-color: color(text-light);
     border-radius: 2px;
-    transition: all 0.3s ease; // Transición suave para el cambio de color
+    transition: all 0.3s ease;
     }
 
     &.open .header__bar:nth-child(1) {
-      transform: rotate(45deg) translate(5px, 5px); // Rotación de la primera barra
+      transform: rotate(45deg) translate(5px, 5px); 
     }
 
     &.open .header__bar:nth-child(2) {
-      opacity: 0; // Oculta la segunda barra
+      opacity: 0;
     }
 
     &.open .header__bar:nth-child(3) {
-      transform: rotate(-45deg) translate(5px, -5px); // Rotación de la tercera barra
+      transform: rotate(-45deg) translate(5px, -5px);
     }
   }
 //
 
 .header__nav{
-    transition: max-height 0.3s ease; // Transición suave para el menú
+    transition: max-height 0.3s ease;
   }
 
   .header__list {
@@ -99,11 +99,11 @@ header.header.container-full {
 
   @media (max-width: breakpoint(mobile)) {
     .header__toggle {
-      display: flex; // Muestra el botón de menú en pantallas pequeñas
+      display: flex;
     }
     .header__nav {
-      max-height: 0; // Oculta el menú por defecto
-      overflow: hidden; // Evita que el contenido se desborde
+      max-height: 0;
+      overflow: hidden;
       background-color: color(primary);
       position: absolute;
       top: 100%;
@@ -113,7 +113,7 @@ header.header.container-full {
     }
 
     .header__nav.open {
-      max-height: 400px; // Fija una altura máxima para el menú desplegado
+      max-height: 400px;
     }
 
     .header__list {
@@ -123,8 +123,4 @@ header.header.container-full {
       gap: 1rem;
     }
   }
-}
-
-#Servicios {
-  scroll-margin-top: 80px; // Ajusta el scroll para que el header no tape el contenido
 }

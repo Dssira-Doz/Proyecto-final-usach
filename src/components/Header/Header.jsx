@@ -4,13 +4,13 @@ import logo from '../../assets/AgritaLogo500.png';
 
 const Header = () => {
 
-  const [isOpen, setIsOpen] = useState(false); //useState maneja el estado del menú abierto o cerrado
-  const toggleMenu = () => { // Función para alternar el estado del menú abierto o cerrado. Cambia el estado de isOpen al valor contrario
+  const [isOpen, setIsOpen] = useState(false); 
+  const toggleMenu = () => { 
     setIsOpen(!isOpen);
   };
 
   const handleLinkClick = () => {
-    setIsOpen(false); //Cierra el menú al hacer clic en un enlace en dispositivos móviles
+    setIsOpen(false); 
   }
   
   return (
