@@ -5,7 +5,7 @@ import logo from '../../assets/AgritaLogo500.png';
 const Header = () => {
 
   const [isOpen, setIsOpen] = useState(false); 
-  const toggleMenu = () => { 
+  const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
