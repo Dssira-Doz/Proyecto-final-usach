@@ -5,11 +5,12 @@ function BlogPreview() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true); 
   const [error, setError] = useState(null); 
-
+  
+  const BLOG_DATA_URL = "https://dssira-doz.github.io/Proyecto-final-usach/blogData.json";
   const fetchPosts = async () => {
       try{
         setLoading(true); 
-        const response = await fetch(`${process.env.PUBLIC_URL}/blogData.json`);
+        const response = await fetch(BLOG_DATA_URL);
 
         if (!response.ok) {
           throw new Error(`Error HTTP: ${response.status}`);
