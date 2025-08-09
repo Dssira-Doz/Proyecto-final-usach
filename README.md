@@ -6,6 +6,8 @@ Este proyecto es una aplicación web desarrollada con React y Vite, que simula u
 
 - `public/`: Archivos estáticos, imágenes y datos del blog (`blogData.json`).
 - `src/`: Código fuente principal.
+  - `App.jsx`: Componente principal que orquesta la estructura de la aplicación, renderizando el Header, Hero, Pilares, BlogPreview y Footer.
+  - `main.jsx`: Punto de entrada de la app, monta el componente `App` en el DOM y aplica los estilos globales.
   - `components/`: Componentes reutilizables (Header, Footer, BlogPreview, etc).
   - `views/`: Vistas principales de la aplicación (Home, Blog, Contacto, etc).
   - `styles/`: Archivos SCSS globales y utilitarios.
@@ -40,6 +42,9 @@ Este proyecto es una aplicación web desarrollada con React y Vite, que simula u
 - Los datos del blog se encuentran en `public/blogData.json`.
 - Las imágenes deben estar en la carpeta `public/images` o `src/assets` según su uso.
 - El proyecto utiliza SCSS para los estilos.
+
+## Demo
+https://dssira-doz.github.io/Proyecto-final-usach
 
 ## Autoría
 Proyecto realizado como entrega final para la Universidad de Santiago de Chile.
